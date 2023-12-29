@@ -16,7 +16,12 @@ const Footer = () => {
         "
         >
           <Link href="/" className="mb-10">
-            <Image src="code_alarm_logo.svg" alt="logo" width={200} height={60} />
+            <Image
+              src="code_alarm_logo.svg"
+              alt="logo"
+              width={200}
+              height={60}
+            />
           </Link>
 
           <div
@@ -29,7 +34,7 @@ const Footer = () => {
           "
           >
             {FOOTER_LINKS.map((columns) => (
-              <FooterColumn title={columns.title}>
+              <FooterColumn title={columns.title} key={columns.title}>
                 <ul
                   className="
                 regular-14
@@ -51,10 +56,13 @@ const Footer = () => {
             <div className="flex flex-col gap-5">
               <FooterColumn title={SOCIALS.title}>
                 <ul className="regular-15 flex gap-4 text-gray-30">
-                  {SOCIALS.links.map((link)=>(
+                  {SOCIALS.links.map((link) => (
                     <Link href={link.link} key={link.platform} target="blank">
-                      <Image 
-                      src={link.icon} alt="logo" width={24} height={24}
+                      <Image
+                        src={link.icon}
+                        alt="logo"
+                        width={24}
+                        height={24}
                       />
                     </Link>
                   ))}
@@ -65,7 +73,9 @@ const Footer = () => {
         </div>
 
         <div className="border bg-gray-20" />
-        <p className="regular-14 w-full text-center text-gray-30">2023 CodeAlarm | All rights reserved</p>
+        <p className="regular-14 w-full text-center text-gray-30">
+          2023 CodeAlarm | All rights reserved
+        </p>
       </div>
     </footer>
   );
